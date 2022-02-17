@@ -11,4 +11,4 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - ./schema:/docker-entrypoint-initdb.d
+      - ./src/test/resources:/docker-entrypoint-initdb.d
