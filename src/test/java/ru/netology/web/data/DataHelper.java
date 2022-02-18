@@ -71,5 +71,22 @@ public class DataHelper {
         }
         return null;
     }
+
+    @SneakyThrows
+    public static String getUserID(String login) {
+        val userID = "SELECT id FROM users WHERE login = ?;";
+        val queryRunner = new QueryRunner();
+
+        try (
+                val conn = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/app", "app", "pass"
+                );
+        ) {
+            queryRunner.execute(conn, userID, login);
+        }
+        return null;
+    }
+
+
 }
 
