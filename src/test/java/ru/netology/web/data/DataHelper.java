@@ -31,8 +31,8 @@ public class DataHelper {
 
     @Value
     public static class AuthInfo {
-        private String login;
-        private String password;
+        String login;
+        String password;
     }
 
     public static AuthInfo getAuthInfo() {
@@ -41,7 +41,7 @@ public class DataHelper {
 
     @Value
     public static class Card {
-        private String cardNumber;
+        String cardNumber;
     }
 
     public static Card getReceiverCardNumber() {
@@ -54,7 +54,7 @@ public class DataHelper {
 
     @Value
     public static class VerificationCode {
-        private String verificationCode;
+        String verificationCode;
     }
 
     @SneakyThrows
@@ -86,7 +86,5 @@ public class DataHelper {
         }
         return null;
     }
-
-
 }
 
