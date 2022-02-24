@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.AuthPage;
 import ru.netology.web.page.DashBoardPage;
+import ru.netology.web.page.VerificationPage;
 
 public class AuthTest {
 
@@ -40,7 +41,7 @@ public class AuthTest {
         val verificationCode = authPage.validLogin(authInfo);
         val verifyBadCode = DataHelper.getBadVerificationCode();
 
-        verificationCode.invalidVerifyCode(verifyBadCode);
+        VerificationPage.invalidVerifyCode(verifyBadCode);
 
     }
 

@@ -6,10 +6,10 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 
 public class VerificationPage {
-    private SelenideElement verifyCodeField = $("[data-test-id=code] input");
-    private SelenideElement verifyButton = $("[data-test-id=action-verify]");
-    private SelenideElement errorTransfer = $("[data-test-id='error-notification']");
-    private SelenideElement errorBlocked = $("[data-test-id='error-notification'] div.notification__content");
+    private static final SelenideElement verifyCodeField = $("[data-test-id=code] input");
+    private static final SelenideElement verifyButton = $("[data-test-id=action-verify]");
+    private static final SelenideElement errorTransfer = $("[data-test-id='error-notification']");
+    private static final SelenideElement errorBlocked = $("[data-test-id='error-notification'] div.notification__content");
 
     public VerificationPage() {
         verifyCodeField.shouldBe(Condition.visible);
@@ -22,7 +22,8 @@ public class VerificationPage {
         return new DashBoardPage();
     }
 
-    public void invalidVerifyCode(String verificationCode) {
+    public static void invalidVerifyCode(String verificationCode) {
+
         verifyCodeField.setValue(verificationCode);
         verifyButton.click();
 
