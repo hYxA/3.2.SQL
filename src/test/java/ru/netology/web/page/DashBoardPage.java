@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class DashBoardPage {
     private SelenideElement head = $("[data-test-id='dashboard']");
 
-    public void isDashboardPage() {
+    public void itIsDashboardPage() {
         head.shouldBe(visible);
     }
 }

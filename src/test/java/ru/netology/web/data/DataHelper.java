@@ -8,8 +8,6 @@ import org.apache.commons.dbutils.QueryRunner;
 import java.sql.DriverManager;
 
 public class DataHelper {
-    private DataHelper() {
-    }
 
     @SneakyThrows
     public static void cleanData() {
@@ -37,6 +35,10 @@ public class DataHelper {
 
     public static AuthInfo getAuthInfo() {
         return new AuthInfo("petya", "qwerty123456");
+    }
+
+    public static AuthInfo getBadAuthInfo() {
+        return new AuthInfo("petya123", "qwerty444");
     }
 
     @Value
@@ -70,6 +72,10 @@ public class DataHelper {
             queryRunner.execute(conn, verificationCode, 1);
         }
         return null;
+    }
+
+    public static String getBadVerificationCode() {
+        return "098762";
     }
 
     @SneakyThrows
