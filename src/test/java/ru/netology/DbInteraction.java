@@ -9,6 +9,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+
+// этот файл для шпаргалки сохранен
+
 public class DbInteraction {
     @BeforeEach
     @SneakyThrows
